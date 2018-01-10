@@ -18,8 +18,7 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
-
+function first(arr) {return arr[0]}
 
 ////////// PROBLEM 2 //////////
 
@@ -33,8 +32,7 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
-
+function last (arr){return arr[arr.length -1]}
 
 ////////// PROBLEM 3 //////////
 
@@ -48,7 +46,13 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
+function looper(family){
+  for (let i = 0; i<family.length ; i++){
+    alert(family[i])
+  }
+}
 
+//looper([1,2,3])
 
 
 ////////// PROBLEM 4 //////////
@@ -63,8 +67,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
+function reversedLooper(arr){
+  for (let i=arr.length-1; i>=0; i--){
+    alert(arr[i])
+  }
+}
+//reversedLooper([1,2,3,4])
 
 ////////// PROBLEM 5 //////////
 
@@ -78,6 +86,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+function evenFinder(arr){
+  newArr = []
+  for( let i = 0; i<arr.length; i++){
+    if (arr[i] %2 ==0){
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
+}
 
 
 
@@ -95,6 +112,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+const divider = (arr) => {
+  newArr = []
+  evenArr = []
+  oddArr = []
+  for (let i=0; i<arr.length; i++){
+    if (arr[i] %2==0){
+      evenArr.push(arr[i])
+    }else if(arr[i] %2!==0){
+      oddArr.push(arr[i])
+    }
+  }
+  newArr.push(evenArr)
+  newArr.push(oddArr)
+  return newArr
+}
+
+//console.log(divider([1,2,3,4,5,6]))
 
 
 
@@ -116,8 +150,18 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+const finder = (arr) => {
+  var random = getRandomArbitrary()
+  //console.log(random)
+  var exist = arr.indexOf(random)
+  if (exist !== -1){
+    return true
+  }else{
+    return false
+  }
+}
 
-
+//console.log(finder([1,2,3,4,5,6,7,8,9,10]))
 
 ////////// PROBLEM 8 //////////
 
@@ -143,6 +187,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+removeItem = (myGroceryList, item) => {
+  let newList = []
+  itemExists = myGroceryList.indexOf(item)
+  if (itemExists!== -1){
+    myGroceryList.splice(itemExists,1)
+  }
+  return myGroceryList;
+}
+//removeItem(myGroceryList, 'pizza')
+addItem = (myGroceryList, item) => {
+  itemExists = myGroceryList.indexOf(item)
+  if (itemExists=== -1){
+    myGroceryList.push(item)
+  }
+  return myGroceryList;
+}
 
 
 
@@ -153,6 +213,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+
+const maker = () => {
+  let arr =[];
+  for (let i=1; i<=215; i++){
+    arr.push(i)
+  }
+  return arr
+}
 
 
 
@@ -169,7 +237,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+const addTen = (numbers) => {
+return numbers.map(x=> Number(x)+10)
+}
+//console.log(addTen(numbers))
 
 
 ////////// PROBLEM 11 //////////
@@ -194,6 +265,7 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+const longer = (arr1, arr2) => (arr1.length>arr2.length ? arr1: arr2)
 
 
 
@@ -206,6 +278,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+const both = (arr1, arr2) => {
+  let newArr = []
+  for(let i=0; i<arr1.length;i++){
+    if (arr2.indexOf(arr1[i])!== -1){
+      newArr.push(arr1[i])
+    }
+  }
+  return newArr;
+}
 
 
 
@@ -246,7 +327,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(colt)
+devMountainEmployees.push(tyler)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+console.log(devMountainEmployees)
 
 
 /*
@@ -255,6 +340,11 @@ var colt = {
 */
 
 //Code Here
+for (let i=0; i<devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name=='Cahlan'){
+    devMountainEmployees.splice(i,1)
+  }
+}
 
 
 
@@ -267,6 +357,7 @@ var colt = {
 */
 
 //Code Here
+var users = []
 
 
 
@@ -286,6 +377,19 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Bobby Buche',
+  email: 'BobbyBob@gmail.com',
+  password: 'foolzball',
+  username: 'waterboy'
+};
+var user3 = {
+  name: 'Hippy Dippy',
+  email: 'Nowayjose@gmail.com',
+  password: 'jumpjump',
+  username: 'theDancer'
+};
+users = [user1, user2, user3]
 
 
 
@@ -298,9 +402,16 @@ var user1 = {
   Loop through your array of objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
   Once you find the particular index he's located in, delete him from the array.
 */
-
+console.log('users=' ,users)
 //Code Here
-
+for(let i=0; i<users.length;i++){
+  console.log(users[i])
+  if (users[i].email == user1.email){
+    users.splice(i, 1)
+    console.log('found it')
+  }
+}
+console.log('users=' ,users)
 
 
 /*
